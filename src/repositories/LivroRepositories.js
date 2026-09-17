@@ -10,6 +10,11 @@ class LivroRepositories {
                          }
                     },
                     autor: true
+               },
+               orderBy: {
+                    livro: {
+                         titulo: "asc"
+                    }
                }
           })
 

@@ -5,6 +5,9 @@ class ExemplarRepositories {
           const result = await prisma.exemplar.findMany({
                include: {
                     livro: true
+               },
+               orderBy: {
+                    cod_identificacao: "asc"
                }
           })
 

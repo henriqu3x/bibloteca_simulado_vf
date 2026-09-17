@@ -14,6 +14,9 @@ class UsuarioRepositories {
                     endereco: true,
                     perfil: true,
                     ativo: true
+               },
+               orderBy: {
+                    nome: 'asc'
                }
           })
 
