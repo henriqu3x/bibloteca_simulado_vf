@@ -51,6 +51,20 @@ class LivroRepositories {
 
           return result
      }
+     async buscarPorEmprestimoExemplar (livro) {
+          const result = await prisma.emprestimo_exemplar.findFirst({
+               where: {
+                    exemplar: {
+                         livro_id: livro.id
+                    }
+               },
+               include: {
+                    exemplar: true
+               }
+          })
+
+          return result
+     }
      async adicionar(livro) {
           const result = await prisma.$transaction(async(fx) => {
                const book = await fx.livro.create({
@@ -155,6 +169,19 @@ class LivroRepositories {
                })
 
                return novo
+          })
+
+          return result
+     }
+
+     async deletar(livro) {
+          const result = await prisma.livro.delete({
+               where: {
+                    id: livro.id
+               },
+               select: {
+                    id: true
+               }
           })
 
           return result

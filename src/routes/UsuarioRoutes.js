@@ -12,5 +12,6 @@ UsuarioRoutes.get('/:id', expressAsyncHandler(usuario_controllers.buscarPorId))
 UsuarioRoutes.post('/', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(usuario_controllers.adicionar))
 UsuarioRoutes.put('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(usuario_controllers.atualizar))
 UsuarioRoutes.patch('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(usuario_controllers.alterarAtivo))
+UsuarioRoutes.delete('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(usuario_controllers.deletar))
 
 export default UsuarioRoutes

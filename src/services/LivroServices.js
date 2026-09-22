@@ -108,6 +108,23 @@ class LivroServices {
 
           return result
      }
+     async deletar(livro){
+          if (!livro.id) {
+               throw new AppError("Insira o id do livro",400);
+               
+          }
+          
+          const verificarEmprestimoExemplar = await this.livro_repositories.buscarPorEmprestimoExemplar(livro)
+          
+          if (verificarEmprestimoExemplar) {
+               throw new AppError("Esse livro possui emprestimos atrelados a ele",400);
+               
+          }
+
+          const result = await this.livro_repositories.deletar(livro)
+
+          return result
+     }
 }
 
 export default LivroServices

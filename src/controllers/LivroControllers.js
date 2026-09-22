@@ -78,6 +78,20 @@ class LivroControllers {
                result
           })
      }
+     deletar = async (req,res) => {
+          const id = req.params.id
+
+          const livro = {
+               id
+          }
+
+          const result = await this.livro_services.deletar(livro)
+
+          res.status(200).json({
+               "message": "Livro deletado com sucesso",
+               result
+          })
+     }
 }
 
 export default LivroControllers

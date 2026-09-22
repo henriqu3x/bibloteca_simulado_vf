@@ -73,6 +73,15 @@ class UsuarioRepositories {
 
           return result
      }
+     async buscarEmprestimos(usuario){
+          const result = await prisma.emprestimo.findFirst({
+               where: {
+                    usuario_id: usuario.id
+               }
+          })
+
+          return result
+     }
      async adicionar(usuario) {
           const result = await prisma.usuario.create({
                data: {
@@ -165,6 +174,20 @@ class UsuarioRepositories {
                })
 
                return novo
+          })
+
+          return result
+     }
+     
+     async deletar(usuario) {
+          const result = await prisma.usuario.delete({
+               where: {
+                    id: usuario.id
+               },
+               select: {
+                    id: true,
+                    email: true
+               }
           })
 
           return result

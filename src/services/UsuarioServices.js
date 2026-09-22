@@ -161,6 +161,30 @@ class UsuarioServices {
 
           return result
      }
+     async deletar(usuario){
+          if (!usuario.id) {
+               throw new AppError("Insira o id do usuario",400);
+               
+          }
+          
+          const verificarId = await this.usuario_repositories.buscarPorId(usuario)
+          
+          if (!verificarId) {
+               throw new AppError("Nenhuma usuario com esse id encontrado",400);
+               
+          }
+          
+          const verificarEmprestimos = await this.usuario_repositories.buscarEmprestimos(usuario)
+          
+          if (verificarEmprestimos) {
+               throw new AppError("Esse usuario possui emprestimos atrelados a ele",400);
+               
+          }
+
+          const result = await this.usuario_repositories.deletar(usuario)
+
+          return result
+     }
 }
 
 export default UsuarioServices
