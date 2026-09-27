@@ -7,10 +7,10 @@ import AdminMiddlewares from '../middlewares/AdminMiddlewares.js'
 const AutorRoutes = express.Router()
 const autor_controllers = new AutorControllers()
 
-AutorRoutes.get('/', expressAsyncHandler(autor_controllers.visualizar))
-AutorRoutes.get('/:id', expressAsyncHandler(autor_controllers.buscarPorId))
-AutorRoutes.post('/', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.adicionar))
-AutorRoutes.put('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.atualizar))
-AutorRoutes.patch('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.alterarAtivo))
+AutorRoutes.get('/',/* #swagger.tags = ['Autores'] */ expressAsyncHandler(autor_controllers.visualizar))
+AutorRoutes.get('/:id',/* #swagger.tags = ['Autores'] */ expressAsyncHandler(autor_controllers.buscarPorId))
+AutorRoutes.post('/',/* #swagger.tags = ['Autores'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.adicionar))
+AutorRoutes.put('/:id',/* #swagger.tags = ['Autores'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.atualizar))
+AutorRoutes.patch('/:id',/* #swagger.tags = ['Autores'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(autor_controllers.alterarAtivo))
 
 export default AutorRoutes

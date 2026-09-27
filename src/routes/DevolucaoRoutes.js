@@ -6,9 +6,9 @@ import AuthMiddlewares from '../middlewares/AuthMiddlewares.js'
 const DevolucaoRoutes = express.Router()
 const devolucao_controllers = new DevolucaoControllers()
 
-DevolucaoRoutes.get('/', expressAsyncHandler(devolucao_controllers.visualizar))
-DevolucaoRoutes.get('/:id', expressAsyncHandler(devolucao_controllers.buscarPorId))
-DevolucaoRoutes.post('/', AuthMiddlewares, expressAsyncHandler(devolucao_controllers.adicionar))
+DevolucaoRoutes.get('/',/* #swagger.tags = ['Devoluções'] */ expressAsyncHandler(devolucao_controllers.visualizar))
+DevolucaoRoutes.get('/:id',/* #swagger.tags = ['Devoluções'] */ expressAsyncHandler(devolucao_controllers.buscarPorId))
+DevolucaoRoutes.post('/',/* #swagger.tags = ['Devoluções'] */ AuthMiddlewares, expressAsyncHandler(devolucao_controllers.adicionar))
 
 
 export default DevolucaoRoutes

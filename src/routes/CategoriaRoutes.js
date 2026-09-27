@@ -7,10 +7,10 @@ import AdminMiddlewares from '../middlewares/AdminMiddlewares.js'
 const CategoriaRoutes = express.Router()
 const categoria_controllers = new CategoriaControllers()
 
-CategoriaRoutes.get('/', expressAsyncHandler(categoria_controllers.visualizar))
-CategoriaRoutes.get('/:id', expressAsyncHandler(categoria_controllers.buscarPorId))
-CategoriaRoutes.post('/', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.adicionar))
-CategoriaRoutes.put('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.atualizar))
-CategoriaRoutes.patch('/:id', AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.alterarAtivo))
+CategoriaRoutes.get('/',/* #swagger.tags = ['Categorias'] */ expressAsyncHandler(categoria_controllers.visualizar))
+CategoriaRoutes.get('/:id',/* #swagger.tags = ['Categorias'] */ expressAsyncHandler(categoria_controllers.buscarPorId))
+CategoriaRoutes.post('/',/* #swagger.tags = ['Categorias'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.adicionar))
+CategoriaRoutes.put('/:id',/* #swagger.tags = ['Categorias'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.atualizar))
+CategoriaRoutes.patch('/:id',/* #swagger.tags = ['Categorias'] */ AuthMiddlewares, AdminMiddlewares, expressAsyncHandler(categoria_controllers.alterarAtivo))
 
 export default CategoriaRoutes
