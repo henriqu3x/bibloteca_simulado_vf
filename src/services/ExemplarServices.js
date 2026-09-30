@@ -15,7 +15,7 @@ class ExemplarServices {
           const result = await this.exemplar_repositories.buscarPorId(exemplar)
 
           if (!result) {
-               throw new AppError("Nenhuma exemplar com esse id encontrado",400);
+               throw new AppError("Nenhuma exemplar com esse id encontrado",404);
                
           }
 

@@ -15,7 +15,7 @@ class LivroServices {
           const result = await this.livro_repositories.buscarPorId(livro)
 
           if (!result) {
-               throw new AppError("Nenhuma livro com esse id encontrado",400);
+               throw new AppError("Nenhuma livro com esse id encontrado",404);
                
           }
 

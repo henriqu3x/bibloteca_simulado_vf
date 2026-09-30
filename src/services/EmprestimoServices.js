@@ -15,7 +15,7 @@ class EmprestimoServices {
           const result = await this.emprestimo_repositories.buscarPorId(emprestimo)
 
           if (!result) {
-               throw new AppError("Nenhuma emprestimo com esse id encontrado",400);
+               throw new AppError("Nenhuma emprestimo com esse id encontrado",404);
                
           }
 

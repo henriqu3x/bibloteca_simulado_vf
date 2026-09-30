@@ -15,7 +15,7 @@ class DevolucaoServices {
           const result = await this.devolucao_repositories.buscarPorId(devolucao)
 
           if (!result) {
-               throw new AppError("Nenhuma devolucao com esse id encontrado",400);
+               throw new AppError("Nenhuma devolucao com esse id encontrado",404);
                
           }
 

@@ -15,7 +15,7 @@ class CategoriaServices {
           const result = await this.categoria_repositories.buscarPorId(categoria)
 
           if (!result) {
-               throw new AppError("Nenhuma categoria com esse id encontrado",400);
+               throw new AppError("Nenhuma categoria com esse id encontrado",404);
                
           }
 

@@ -16,7 +16,7 @@ class UsuarioServices {
           const result = await this.usuario_repositories.buscarPorId(usuario)
 
           if (!result) {
-               throw new AppError("Nenhuma usuario com esse id encontrado",400);
+               throw new AppError("Nenhuma usuario com esse id encontrado",404);
                
           }
 

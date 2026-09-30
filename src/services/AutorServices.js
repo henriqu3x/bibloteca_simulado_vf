@@ -15,7 +15,7 @@ class AutorServices {
           const result = await this.autor_repositories.buscarPorId(autor)
 
           if (!result) {
-               throw new AppError("Nenhuma autor com esse id encontrado",400);
+               throw new AppError("Nenhuma autor com esse id encontrado",404);
                
           }
 
