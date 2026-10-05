@@ -58,6 +58,14 @@ class LivroServices {
                throw new AppError("O isbn tem que ter 17 caracteres",400);
                
           }
+          if (isNaN(livro.ano_publicacao)) {
+               throw new AppError("O ano de publicação deve conter somente numeros",400);
+               
+          }
+          if (livro.ano_publicacao.length != 4) {
+               throw new AppError("O ano de publicação deve conter 4 caracteres",400);
+               
+          }
           
           const verificarIsbn = await this.livro_repositories.buscarPorIsbn(livro)
           
@@ -80,6 +88,13 @@ class LivroServices {
           if (livro.isbn) {
                if (livro.isbn.length != 17) {
                     throw new AppError("O isbn tem que ter 17 caracteres",400);
+                    
+               }
+          }
+
+          if (livro.ano_publicacao) {
+               if (isNaN(livro.ano_publicacao)) {
+                    throw new AppError("O ano de publicação deve conter somente numeros",400);
                     
                }
           }

@@ -26,7 +26,7 @@ class LivroControllers {
           const livro = {
                isbn,
                titulo,
-               ano_publicacao: parseInt(ano_publicacao),
+               ano_publicacao,
                edicao,
                editora,
                categoria_id,
@@ -49,7 +49,7 @@ class LivroControllers {
                id,
                isbn,
                titulo,
-               ano_publicacao: parseInt(ano_publicacao),
+               ano_publicacao,
                edicao,
                editora,
                categoria_id,
