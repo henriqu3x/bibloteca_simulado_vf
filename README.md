@@ -18,7 +18,7 @@ Sistema para gerenciamento interno de uma biblioteca
 Clone o projeto
 
 ```bash
-  git clone https://github.com/henriqu3x/biblioteca_simulado_frontend_vf
+  git clone https://github.com/henriqu3x/bibloteca_simulado_vf
 ```
 
 Va para o diretorio do projeto
