@@ -54,6 +54,10 @@ class LivroServices {
                throw new AppError("Insira o autor do livro",400);
                
           }
+          if (livro.isbn.length != 17) {
+               throw new AppError("O isbn tem que ter 17 caracteres",400);
+               
+          }
           
           const verificarIsbn = await this.livro_repositories.buscarPorIsbn(livro)
           
@@ -71,6 +75,13 @@ class LivroServices {
           if (!livro.id) {
                throw new AppError("Insira o id do livro",400);
                
+          }
+
+          if (livro.isbn) {
+               if (livro.isbn.length != 17) {
+                    throw new AppError("O isbn tem que ter 17 caracteres",400);
+                    
+               }
           }
           
           const verificarId = await this.livro_repositories.buscarPorId(livro)

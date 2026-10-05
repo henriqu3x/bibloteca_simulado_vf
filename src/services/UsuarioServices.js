@@ -55,6 +55,22 @@ class UsuarioServices {
                throw new AppError("Insira o perfil do usuario",400);
                
           }
+          if (usuario.cpf.length != 11) {
+               throw new AppError("O Cpf precisa conter 11 caracteres",400);
+               
+          }
+          if (isNaN(usuario.cpf)) {
+               throw new AppError("O Cpf precisa conter somente numeros",400);
+               
+          }
+          if (isNaN(usuario.telefone)) {
+               throw new AppError("O Telefone precisa conter somente numeros",400);
+               
+          }
+          if (usuario.telefone.length != 11) {
+               throw new AppError("O Telefone precisa conter 11 caracteres",400);
+               
+          }
           
           const verificarEmail = await this.usuario_repositories.buscarPorEmail(usuario)
           
@@ -92,6 +108,28 @@ class UsuarioServices {
           if (!usuario.id) {
                throw new AppError("Insira o id do usuario",400);
                
+          }
+          
+          if (usuario.cpf) {
+               if (usuario.cpf.length != 11) {
+                    throw new AppError("O Cpf precisa conter 11 caracteres",400);
+                    
+               }
+               if (isNaN(usuario.cpf)) {
+                    throw new AppError("O Cpf precisa conter somente numeros",400);
+                    
+               }
+          }
+
+          if (usuario.telefone) {
+               if (isNaN(usuario.telefone)) {
+                    throw new AppError("O Telefone precisa conter somente numeros",400);
+                    
+               }
+               if (usuario.telefone.length != 11) {
+                    throw new AppError("O Telefone precisa conter 11 caracteres",400);
+                    
+               }
           }
           
           const verificarId = await this.usuario_repositories.buscarPorId(usuario)
